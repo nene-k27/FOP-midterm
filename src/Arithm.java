@@ -11,20 +11,28 @@ public class Arithm {
             if (expr.contains("+")) {
                 String[] parts = expr.split("\\+");
                 return calc(parts[0], variables) + calc(parts[1], variables);
-            } else if (expr.contains("-")) {
+            }
+            else if (expr.contains("-")) {
                 String[] parts = expr.split("-");
                 return calc(parts[0], variables) - calc(parts[1], variables);
-            } else if (expr.contains("*")) {
+            }
+            else if (expr.contains("*")) {
                 String[] parts = expr.split("\\*");
                 return calc(parts[0], variables) * calc(parts[1], variables);
-            } else if (expr.contains("/")) {
+            }
+            else if (expr.contains("/")) {
                 String[] parts = expr.split("/");
                 return calc(parts[0], variables) / calc(parts[1], variables);
-            } else {
+            }
+            else if (expr.contains("%")) {
+                String[] parts = expr.split("%");
+                return calc(parts[0], variables) % calc(parts[1], variables);
+            }
+            else {
                 if (variables.containsKey(expr)) {
                     return variables.get(expr);
                 } else {
-                    throw new IllegalArgumentException("Unknown variable: " + expr);
+                    throw new IllegalArgumentException("Unknown variable: " + expr); // Error if variable is unknown
                 }
             }
         }
