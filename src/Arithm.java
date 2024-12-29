@@ -1,3 +1,5 @@
+import java.util.Map;
+
 public class Arithm {
 
     public int calc(String expr, Map<String, Integer> variables) {
