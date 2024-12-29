@@ -9,6 +9,10 @@ public class Printer {
 
     public void handlePrint(String line) {
         String varName = line.substring(line.indexOf('(') + 1, line.indexOf(')')).trim();
-        System.out.println(vars.get(varName));
+        if (vars.containsKey(varName)) {
+            System.out.println(vars.get(varName));
+        } else {
+            System.out.println("Error: Variable " + varName + " not found.");
+        }
     }
 }
