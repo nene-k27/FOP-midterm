@@ -20,14 +20,4 @@ public class Main {
             }
         }
     }
-
-    public static void main(String[] args) {
-        Main interpreter = new Main();
-        String program = """
-            x = 10 + 5;
-            y = x * 2;
-            print(y);
-        """;
-        interpreter.run(program);
-    }
 }
