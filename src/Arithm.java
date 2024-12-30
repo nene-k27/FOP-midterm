@@ -32,7 +32,7 @@ public class Arithm {
                 if (variables.containsKey(expr)) {
                     return variables.get(expr);
                 } else {
-                    throw new IllegalArgumentException("Unknown variable: " + expr); // Error if variable is unknown
+                    throw new IllegalArgumentException("Unknown variable: " + expr);
                 }
             }
         }

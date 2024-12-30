@@ -1,18 +1,29 @@
 import java.util.Map;
 
 public class Printer {
-    private final Map<String, Integer> vars;
+    private final Map<String, Integer> variables;
 
-    public Printer(Map<String, Integer> vars) {
-        this.vars = vars;
+    public Printer(Map<String, Integer> variables) {
+        this.variables = variables;
     }
 
     public void handlePrint(String line) {
-        String varName = line.substring(line.indexOf('(') + 1, line.indexOf(')')).trim();
-        if (vars.containsKey(varName)) {
-            System.out.println(vars.get(varName));
+        int start = line.indexOf("(") + 1;
+        int end = line.lastIndexOf(")");
+        if (start < 0 || end < 0 || start >= end) {
+            System.out.println("Syntax error in print statement: " + line);
+            return;
+        }
+        String content = line.substring(start, end).trim();
+
+        if (content.startsWith("\"") && content.endsWith("\"")) {
+            System.out.println(content.substring(1, content.length() - 1));
+        } else if (variables.containsKey(content)) {
+            System.out.println(variables.get(content));
         } else {
-            System.out.println("Error: Variable " + varName + " not found.");
+            System.out.println("Error: Variable \"" + content + "\" not found.");
         }
     }
 }
+
+
