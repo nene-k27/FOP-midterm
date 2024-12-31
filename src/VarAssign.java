@@ -17,8 +17,5 @@ public class VarAssign {
         int value = arithm.calc(expr, variables);
 
         variables.put(varName, value);
-        System.out.println("Assigning variable '" + varName + "' with expression '" + expr + "'");
     }
 }
-
-

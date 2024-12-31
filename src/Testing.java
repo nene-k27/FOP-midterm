@@ -4,9 +4,9 @@ public class Testing {
 
 
         String addition = """
-                x = 3 + 5;
-                print(x);
-               """;
+                 x = 3 + 5;
+                 print(x);
+                """;
         interpreter.run(addition);
 
 
@@ -38,7 +38,7 @@ public class Testing {
                 y = x * 2;
                 print(y); 
                 """;
-         interpreter.run(ref);
+        interpreter.run(ref);
 
         String preassign = """
                 print(z);
@@ -46,20 +46,19 @@ public class Testing {
         interpreter.run(preassign);
 
         String multelif = """
-                x = 2;
+                x = 2
                 if x > 3:
-                    print("x is greater than 3");
-                else:
-                    if x == 2:
-                        print("x is equal to 2");
-                    else:
-                        print("x is less than 2");
+                    print("x is greater than 3")  
+                elif x == 2:
+                    print("x is equal to 2")
                 """;
         interpreter.run(multelif);
+
     }
 
     public static void main(String[] args) {
         testRun();
     }
-}
 
+
+}
